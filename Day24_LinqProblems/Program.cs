@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,7 +29,8 @@ namespace Day24_LinqProblems
                 new ProductReview() {ProductId =16, UserId=25, Rating=3, Review= "Nice", isLike=true}
             };
             Managment managment = new Managment();
-            Console.WriteLine("1: Foreach Loop \n2: Top Records \n3: Retrive Records Based On Rating \n4: Count Records In List \n5: Retrive Selected Column \n6: Skip Top Recods");
+            Console.WriteLine("1: Foreach Loop \n2: Top Records \n3: Retrive Records Based On Rating \n4: Count Records In List " +
+                "\n5: Retrive Selected Column \n6: Skip Top Recods \n7: Adding List Data To DataTable");
             Console.WriteLine("Enter the choice ");
             int choice=int.Parse(Console.ReadLine());
             switch (choice)
@@ -65,6 +67,11 @@ namespace Day24_LinqProblems
                 case 6:
                     {
                         managment.SkipTopRecordList(productReviews);
+                        break;
+                    }
+                case 7:
+                    {
+                       DataTable table= managment.AddToDataTable(productReviews);
                         break;
                     }
                 default: Console.WriteLine("Please insert valid option ");

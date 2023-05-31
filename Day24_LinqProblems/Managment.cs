@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -64,6 +65,20 @@ namespace Day24_LinqProblems
                 Console.WriteLine("Product Id: " + list.ProductId + " | UserId: " + list.UserId + " | Rating: " + list.Rating + " | Review: " + list.Review + " | Like: " + list.isLike);
 
             }
+        }
+        public DataTable AddToDataTable(List<ProductReview> review)
+        {
+            DataTable table = new DataTable();
+            table.Columns.Add("ProductId", typeof(int));
+            table.Columns.Add("UserId", typeof(int));
+            table.Columns.Add("Rating", typeof(double));
+            table.Columns.Add("Review", typeof(string));
+            table.Columns.Add("isLike", typeof(bool));
+            foreach (var list in review)
+            {
+                table.Rows.Add(list.ProductId, list.UserId,list.Rating,list.Review, list.isLike);
+            }
+            return table;
         }
     }
 }
