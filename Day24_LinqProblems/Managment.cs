@@ -33,5 +33,14 @@ namespace Day24_LinqProblems
 
             }
         }
+        public void RetriveCountOfRecordList(List<ProductReview> review)
+        {
+            var recordData = review.GroupBy(x => x.ProductId).Select(x => new { ProductId = x.Key, Count = x.Count() });
+            foreach (var list in recordData)
+            {
+                Console.WriteLine("Product Id: " + list.ProductId + " Total: " + list.Count);
+
+            }
+        }
     }
 }
