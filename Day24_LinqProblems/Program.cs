@@ -22,13 +22,13 @@ namespace Day24_LinqProblems
                 new ProductReview() {ProductId =10, UserId=20, Rating=1, Review= "Bad", isLike=false},
                 new ProductReview() {ProductId =11, UserId=10, Rating=1, Review= "Bad", isLike=false},
                 new ProductReview() {ProductId =12, UserId=9, Rating=2, Review= "Bad", isLike=false},
-                new ProductReview() {ProductId =13, UserId=12, Rating=3, Review= "Nice", isLike=true},
+                new ProductReview() {ProductId =9, UserId=12, Rating=3, Review= "Nice", isLike=true},
                 new ProductReview() {ProductId =14, UserId=10, Rating=6, Review= "Good", isLike=true},
                 new ProductReview() {ProductId =15, UserId=14, Rating=5, Review= "Good", isLike=true},
                 new ProductReview() {ProductId =16, UserId=25, Rating=3, Review= "Nice", isLike=true}
             };
             Managment managment = new Managment();
-            Console.WriteLine("1: Foreach Loop \n2: Top Records");
+            Console.WriteLine("1: Foreach Loop \n2: Top Records \n3: Retrive Records Based On Rating");
             Console.WriteLine("Enter the choice ");
             int choice=int.Parse(Console.ReadLine());
             switch (choice)
@@ -45,6 +45,11 @@ namespace Day24_LinqProblems
                 case 2:
                     {
                         managment.TopRecordList(productReviews);
+                        break;
+                    }
+                case 3:
+                    {
+                        managment.SelectedRecord(productReviews);
                         break;
                     }
                 default: Console.WriteLine("Please insert valid option ");
