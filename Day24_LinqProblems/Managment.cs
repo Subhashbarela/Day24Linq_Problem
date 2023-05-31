@@ -54,5 +54,16 @@ namespace Day24_LinqProblems
 
             }
         }
+        public void SkipTopRecordList(List<ProductReview> review)
+        {
+            var recordData = (from productReviews in review
+                              select productReviews).Skip(5);
+
+            foreach (var list in recordData)
+            {
+                Console.WriteLine("Product Id: " + list.ProductId + " | UserId: " + list.UserId + " | Rating: " + list.Rating + " | Review: " + list.Review + " | Like: " + list.isLike);
+
+            }
+        }
     }
 }
