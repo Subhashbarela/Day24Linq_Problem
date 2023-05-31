@@ -28,7 +28,7 @@ namespace Day24_LinqProblems
                 new ProductReview() {ProductId =16, UserId=25, Rating=3, Review= "Nice", isLike=true}
             };
             Managment managment = new Managment();
-            Console.WriteLine("1: Foreach Loop \n2: Top Records \n3: Retrive Records Based On Rating \n4: Count Records In List");
+            Console.WriteLine("1: Foreach Loop \n2: Top Records \n3: Retrive Records Based On Rating \n4: Count Records In List \n5: Retrive Selected Column");
             Console.WriteLine("Enter the choice ");
             int choice=int.Parse(Console.ReadLine());
             switch (choice)
@@ -55,6 +55,11 @@ namespace Day24_LinqProblems
                 case 4:
                     {
                         managment.RetriveCountOfRecordList(productReviews);
+                        break;
+                    } 
+                case 5:
+                    {
+                        managment.SelectedColumnRecordList(productReviews);
                         break;
                     }
                 default: Console.WriteLine("Please insert valid option ");

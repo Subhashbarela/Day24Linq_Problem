@@ -42,5 +42,17 @@ namespace Day24_LinqProblems
 
             }
         }
+        public void SelectedColumnRecordList(List<ProductReview> review)
+        {
+            var recordData = (from productReviews in review
+                              select ("[ "+productReviews.ProductId +"   " + productReviews.Review+" ]"));
+
+            Console.WriteLine(" Id Reviews");
+            foreach (var list in recordData)
+            {
+                Console.WriteLine(list);
+
+            }
+        }
     }
 }
